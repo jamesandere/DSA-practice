@@ -22,6 +22,29 @@ function pyramid(n) {
   }
 }
 
+//Solution 2
+
+function pyramid(n) {
+  const width = (2 * n) - 1;
+  const mid = Math.floor(width / 2);
+  let level = "";
+
+  for(let row=0; row < n; row++){
+    level = ""
+
+    for(let col=0; col < width; col++){
+      if(col < mid-row  || col > mid + row){
+        level += " "
+      } else {
+        level += "#"
+      }
+    }
+    console.log(level);
+  }
+}
+
+pyramid(5)
+
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
 //    ) (   | (    \/| (    \/   ) (     | (    \/| (   ) || (    \/| (    \/| (    \/
